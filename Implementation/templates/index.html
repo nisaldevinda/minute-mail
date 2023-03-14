@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MinuteMail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo 1.png') }}" alt="Logo 1">
+        <img src="{{ url_for('static', filename='images/MinuteMail.png') }}" alt="Logo 2">
+      </div>
+      <div class="navlinks">
+        <a href="/loginpage">Sign Up</a>
+        <a href="/loginpage">Login</a>
+      </div>
+    </nav>
+    
+    <!-- Body content -->
+    <div class="container">
+      <h1>AI Powered<br>Email Generator</h1>
+      <p>Welcome to MinuteMail, the AI-powered email content generator that makes writing emails a breeze.<br>With our easy-to-use interface and powerful algorithms, you can quickly create professional and<br>effective email content in minutes.Whether you need to send a business proposal, follow up on a<br>lead, or simply connect with your colleagues, MinuteMail has got you covered. Say goodbye to<br>writer's block and endless hours of staring at a blank screen. Try MinuteMail today and start sending<br>better emails in no time!</p>
+      <p><a href="\inputspage" class="btn">Generate Email</a></p>
+    </div>
+  </body>
+</html>
