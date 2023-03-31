@@ -2,20 +2,20 @@ from flask import Flask, render_template, request
 app= Flask(__name__)
 app.static_folder = 'static'
 
-inputs=[]
-
 @app.route("/")
-@app.route("/inputspage")
-def inputspage():
-    return render_template("Generate email.html")
-
 @app.route("/homepage")
-def homepage():
+def inputspage():
     return render_template("index.html")
+
+@app.route("/inputspage")
+def homepage():
+    return render_template("Generate email.html")
 
 @app.route("/loginpage")
 def loginpage():
     return render_template("login.html")
+
+inputs=[]
 
 @app.route("/GenerateEmail", methods=["POST", "GET"])
 def GenerateEmail():
@@ -25,6 +25,7 @@ def GenerateEmail():
         recipient_title=request.form.get("recipient-title")
         purpose=request.form.get("purpose")
         content=request.form.get("content")
+        inputs.clear()
         inputs.append(sender_name)
         inputs.append(recipient_name)
         inputs.append(recipient_title)
@@ -40,19 +41,23 @@ def CreatePrompt():
     purpose= inputs[3]
     content= inputs[4]
     emailtype="email"
-    prompt="Write an"+emailtype+" to "+recipient_title+" "+recipient_name+" for "+purpose+"( "+content+" )"+" for myself, "+sender_name+". Continue"
+    prompt="Write an "+emailtype+" to "+recipient_title+" "+recipient_name+" for "+purpose+" and mentioning "+content+" "+" for myself, "+sender_name+". Continue"
     return prompt 
     
 
 import openai
-openai.api_key = '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'
+
+f = open("C:\\Users\ACER\Downloads\key\key.txt", "r")
+key= f.read()
+
+openai.api_key = key
 
 def APIcall():
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt= CreatePrompt(),
         temperature=0.9,
-        max_tokens=150,
+        max_tokens=1000,
         top_p=1,
         frequency_penalty=0.0,
         presence_penalty=0.6,
@@ -67,7 +72,7 @@ def DisplayEmail():
     purpose= inputs[3]
     content= inputs[4]
     email= APIcall()
-    return render_template("result.html", sender_name= sender_name, recipient_name= recipient_name, recipient_title= recipient_title, 
+    return render_template("email-result.html", sender_name= sender_name, recipient_name= recipient_name, recipient_title= recipient_title, 
                            purpose= purpose, content=content, generated_email= email)
 
 if __name__=="__main__":

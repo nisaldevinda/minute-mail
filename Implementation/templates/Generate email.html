@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Generate Email</title>
+  <title>Email Form</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/emailcss.css') }}">
 </head>
 <body>
     <header>
-        <nav>
-          <ul>
-            <li><a href="/homepage">Home</a></li>
-            <li><a href="/loginpage">Login</a></li>
-          </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='images/logo 1.png') }}" alt="Logo 1">
+          <img src="{{ url_for('static', filename='images/MinuteMail.png') }}" alt="Logo 2">
+        </div>
+        <div class="navlinks">
+          <a href="/homepage">Home</a>
+          <a href="/loginpage">Sign Up</a>
+          <a href="/loginpage">Login</a>
+        </div>
+      </nav>
       </header>
       
   <div class="container" id="form">
@@ -27,7 +32,7 @@
       </div>
       <div class="form-group">
 
-        <input type="text" id="recipient-title" name="recipient-title" placeholder="Recipient Title:" required>
+        <input type="text" id="recipient-title" name="recipient-title" placeholder="Recipient's Title:" required>
       </div>
       <div class="form-group">
      <input type="text" id="purpose" name="purpose" placeholder="Purpose of the Email:" required>
@@ -43,9 +48,8 @@
           <option value="professional">Professional Email</option>
         </select>
       </div>
-      <input type="submit" class="button" value="Send" onclick="submitform();">
+      <input type="submit" class="button" value="Generate Email">
     </form>
   </div>
-  <script src="emailjs.js"></script>
 </body>
 </html>

@@ -1,116 +1,126 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  body{
-    min-height: 100vh;
-    width: 100%;
-    background: #293241;
-  }
-  header {
-    background-color: #333;
-    color:#EE6C4D;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  nav li {
-    margin-right: 20px;
-  }
-  
-  nav {
-    background-color: #333;
-    overflow: hidden;
-  }
-  
-  nav a {
-    float: right;
-    color:#EE6C4D;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  nav a:hover {
-    background-color:#EE6C4D;
-    color: black;
-  }
-  
-  
-  .container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    max-width: 430px;
-    width: 100%;
-    background: #293241;
-    border-radius: 7px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-  }
-  
-  .form-group{
-    margin-bottom: 1.0rem;
-  }
-  
-  .form-group label{
-    display: block;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .form-group input[type="text"],
-  .form-group select{
-    height: 55px;
-    width: 100%;
-    padding: 0 15px;
-    font-size: 17px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    outline: none;
-  }
+.navbar {
+  width: 100%;
+    padding: 10px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .form-group input[type="text"]:focus,
-  .form-group select:focus{
-    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
-  }
-  
-  #contents-container{
-    background-color:#293241;
-    padding: 2rem;
-    border-radius: 6px;
-  }
-  
-  .button{
+.logo {
+  height: 50px;
+}
 
-    display: inline-block;
-    padding: 0.8rem 1.2rem;
-    background-color:#EE6C4D;
-    color: #fff;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover{
-    background-color:#293241;
-  }
-  
-  @media screen and (max-width: 600px){
-    .container{
-      max-width: 90%;
-    }
-  }
+.navlinks {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
+.navlinks a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navlinks a:hover {
+  background-color: #EE6C4D;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: #293241;
+}
+#progress-bar {
+  width: 100%;
+  height: 10px;
+  margin-top: 1rem;
+}
+
+#progress-bar::-webkit-progress-value {
+  background-color: #EE6C4D;
+  border-radius: 4px;
+}
+
+#progress-bar::-webkit-progress-bar {
+  background-color: #ddd;
+  border-radius: 4px;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 430px;
+  width: 100%;
+  background: #293241;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 0.6rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+#contents-container {
+  background-color: #293241;
+  padding: 2rem;
+  border-radius: 6px;
+}
+
+.text{
+  color:#ddd;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  background-color: #ee6c4d;
+  color: #fff;
+  font-size: 1.0rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.button:hover {
+  background-color: #e67e22;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 90%;
+  }
+}

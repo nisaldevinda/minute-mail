@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #293241;
+    color: #FFFFFF;
+}
+
+
+
+/* Navigation bar styles */
+.navbar {
+    width: 100%;
+      padding: 10px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.logo {
+    height: 50px;
+}
+  
+.navlinks {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+  
+.navlinks a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+  
+.navlinks a:hover {
+    background-color: #EE6C4D;
+}
+
+.generate-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #d8d8d8;
+}
+#regenEmailBtn{
+    background-color: #EE6C4D;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+#regenEmailBtn:hover {
+    background-color: #e67e22;
+  } 
+#email-tone {
+    color: #FFFFFF;
+}
+
+#email-section {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.sub-heading {
+    font-weight: 400;
+    color: #EE6C4D;
+    font-size: 24px;
+}
+
+.small-text {
+    font-weight: 300;
+    font-size: 16px;
+    color: #b8b8b8;
+}
+
+#email-results-section {
+    margin-left: 5%;
+    width: 45%;
+}
+#email-section-wrap{
+    padding-top: 5%;
+}
+
+#email-result {
+    padding: 14px 16px;
+    width: 100%;
+    min-height: 460px;
+    border-radius: 4px;
+    background-color: #3D5A80;
+    margin-top: 8px;
+    color: #fff3e6;
+    font-weight: 400;
+}
+
+.add-btn-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    background-color: red;
+}
+
+.add-btn {
+    background-color: #EE6C4D;
+    color: #FFFFFF;
+}
+
+#recipient-name {
+    width: 95%;
+}
+
+#email-section-wrap {
+    display: flex;
+}
+
+@media screen and (max-width: 480px) {
+    #email-section-wrap {
+        display: block;
+        margin-top: 540px;
+    }
+
+    #email-results-section {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 64px;
+    }
+
+    .nav-btn {
+        font-weight: 300;
+        font-size: 12px;
+        margin-left: 12px;
+    }
+
+
+}

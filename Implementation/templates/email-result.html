@@ -4,70 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generated Email's Result</title>
+    <title>Result</title>
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}" >
 </head>
 <body>
     
-    <nav id="navbar">
-        <div class="container d-flex">
-            <div class="col-4">
-                <a href="index.html">
-                    <img src="assets/logo.png" alt="">
-                </a>
-            </div>
-            <div class="col-8 d-flex nav-items">
-                <button class="btn nav-btn">Login</button>
-                <button class="btn nav-btn">Sign Up</button>
-            </div>
+    <nav class="navbar">
+        <div class="logo">
+          <img src="{{ url_for('static', filename='images/logo 1.png') }}" alt="Logo 1">
+          <img src="{{ url_for('static', filename='images/MinuteMail.png') }}" alt="Logo 2">
         </div>
-    </nav>
+        <div class="navlinks">
+          <a href="/homepage">Home</a>
+          <a href="/loginpage">Sign Up</a>
+          <a href="/loginpage">Login</a>
+        </div>
+      </nav>
 
     <section id="email-section">
         <div class="container" id="email-section-wrap">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <h1 class="sub-heading">Email Inputs</h1>
-                <p class="small-text">Please fill the following fields. Your email will be generated using these as prompts</p>
+                <h1 class="sub-heading">Inputs</h1>
+                <p class="small-text">The Prompts You Gave Us.</p>
                 <br>
                 <br>
                 <form action="" method="post">
                     <div class="d-flex">
                         <div class="col-6">
-                            <label for="recipient-name">Recipient Name</label><br>
-                            <input type="text" id="recipient-name" class="generate-input" placeholder="John Doe">
+                            <label for="recipient-name">Recipient's Name</label><br>
+                            <input type="text" id="recipient-name" class="generate-input" value="{{recipient_name}}" readonly>
                         </div>
                         <div class="col-6">
-                            <label for="recipient-title">Recipient Title</label><br>
-                            <input type="text" id="recipient-title" class="generate-input" placeholder="Employer">
+                            <label for="recipient-title">Recipient's Title</label><br>
+                            <input type="text" id="recipient-title" class="generate-input" value="{{recipient_title}}" readonly>
                         </div>
                     </div>
                     <br>
-                    <label for="email-purpose">Purpose of the Email</label><br>
-                    <input type="text" id="email-purpose" class="generate-input" placeholder="To apply for a leave from work">
+                    <label for="email-purpose">Purpose Mentioned</label><br>
+                    <input type="text" id="email-purpose" class="generate-input" value="{{purpose}}" readonly>
                     <br><br>
-                    <label for="email-purpose">Email Contents</label><br>
-                    <input type="text" id="email-contents" class="generate-input" placeholder="Include that I will be away for two days">
+                    <label for="email-purpose">Content Given</label><br>
+                    <input type="text" id="email-contents" class="generate-input" value="{{content}}" readonly>
                     <br><br>
-                    <label for="email-tone">Tone of the Email</label><br>
-                    <select name="email-tone" id="email-tone" class="generate-input">
-                        <option value="tone-formal">Formal</option>
-                        <option value="tone-formal">Casual</option>
-                        <option value="tone-formal">Professional</option>
-                        <option value="tone-formal">Friendly</option>
-                    </select>
-                    <button class="btn fw-btn">Generate Email</button>
+                    <p><a id="regenEmailBtn" href="\inputspage">Regenerate Email</a></p> 
+                    <p class="note">Not happy with what you received? <br>Click <a href="#" onclick="window.location.reload(true);">here</a> to regenerate an email with the same data you entered OR <br>Hit the "Regenerate Email" button above to enter new data.</p>
+                    <style>
+                    </style>
                 </form>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" id="email-results-section">
                 <h1 class="sub-heading">Generated Email</h1>
-                <p class="small-text">Your personalized email will appear below</p>
+                <p class="small-text">Here's Your Email!</p>
                 <br>
                 <br>
                 <label for="email-result">Email Subject and Body</label>
-                <div id="email-result">Your Email will appear here</div>
+                <div id="email-result"><p>{{generated_email}}</p></div>
             </div>
         </div>
     </section>
