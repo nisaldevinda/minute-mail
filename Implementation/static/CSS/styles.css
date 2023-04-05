@@ -158,3 +158,50 @@ body {
 
 
 }
+
+.home-section{
+    background-image: url("../images/home-bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-top: -20px;
+    height: 90vh;
+    width: 100%;
+}
+
+.section1{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.section1 h1{
+    font-weight: 400;
+    font-size: 64px;
+    margin-bottom: 48px;
+}
+
+.section1 h1{
+    font-weight: 400;
+    font-size: 64px;
+    margin-bottom: 48px;
+}
+
+.section1 p{
+    font-size: 14px;
+    line-height: 28px;
+    margin-bottom: 48px;
+}
+
+.generate-btn{
+    background-color: #EE6C4D;
+    width: 100%;
+    padding: 14px 16px;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.generate-btn:hover{
+    background-color: #e67e22;
+    color: #FFFFFF;
+}

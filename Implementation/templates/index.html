@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/bootstrap.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+
 </head>
 
 <body>
@@ -30,17 +31,23 @@
   </nav>
 
   <!-- Body content -->
-  <div class="container">
-    <div class="section1">
-      <h1>AI Powered<br>Email Generator</h1>
-      <p>Welcome to MinuteMail, the AI-powered email content generator that makes writing emails a breeze.<br>With our
-        easy-to-use interface and powerful algorithms, you can quickly create professional and<br>effective email
-        content in minutes.Whether you need to send a business proposal, follow up on a<br>lead, or simply connect with
-        your colleagues, MinuteMail has got you covered. Say goodbye to<br>writer's block and endless hours of staring
-        at a blank screen. Try MinuteMail today and start sending<br>better emails in no time!</p>
-      <p><a href="\inputspage" class="btn">Generate Email</a></p>
+  <div class="home-section">
+    <div class="container">
+      <div class="section1">
+        <div>
+          <h1 class="animated-text">AI Powered<br>Email Generator</h1>
+          <p>Welcome to MinuteMail, the AI-powered email content generator that makes writing emails a breeze.<br>With our
+            easy-to-use interface and powerful algorithms, you can quickly create professional and<br>effective email
+            content in minutes.Whether you need to send a business proposal, follow up on a<br>lead, or simply connect with
+            your colleagues, MinuteMail has got you covered. Say goodbye to<br>writer's block and endless hours of staring
+            at a blank screen. Try MinuteMail today and start sending<br>better emails in no time!</p>
+          <a href="\inputspage"><button class="btn generate-btn">Generate Email</button></a>
+        </div>
+      </div>
     </div>
   </div>
 </body>
+
+
 
 </html>
