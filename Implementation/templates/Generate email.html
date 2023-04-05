@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
   <title>Email Form</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/emailcss.css') }}">
 </head>
+
 <body>
-    <header>
-      <nav class="navbar">
+  <header>
+    <nav class="navbar">
+      <div class="container">
         <div class="logo">
           <img src="{{ url_for('static', filename='images/logo 1.png') }}" alt="Logo 1">
           <img src="{{ url_for('static', filename='images/MinuteMail.png') }}" alt="Logo 2">
@@ -19,11 +22,12 @@
           <a href="/loginpage">Sign Up</a>
           <a href="/loginpage">Login</a>
         </div>
-      </nav>
-      </header>
-      
+      </div>
+    </nav>
+  </header>
+
   <div class="container" id="form">
-    <form action="/GenerateEmail" method="POST"  >
+    <form action="/GenerateEmail" method="POST">
       <div class="form-group">
         <input type="text" id="sender-name" name="sender-name" placeholder="Sender's Name: " required>
       </div>
@@ -35,13 +39,13 @@
         <input type="text" id="recipient-title" name="recipient-title" placeholder="Recipient's Title:" required>
       </div>
       <div class="form-group">
-     <input type="text" id="purpose" name="purpose" placeholder="Purpose of the Email:" required>
+        <input type="text" id="purpose" name="purpose" placeholder="Purpose of the Email:" required>
       </div>
       <div class="form-group">
         <input type="text" id="content" name="content" placeholder="Content of Email:" required>
-         </div>
+      </div>
       <div class="form-group">
-        <label class="text"  for="type">Type of Email:</label>
+        <label class="text" for="type">Type of Email:</label>
         <select id="type" name="type">
           <option value="personal">Personal Email</option>
           <option value="social">Social Email</option>
@@ -52,4 +56,5 @@
     </form>
   </div>
 </body>
+
 </html>

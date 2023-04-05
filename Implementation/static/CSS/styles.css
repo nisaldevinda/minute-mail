@@ -18,7 +18,8 @@ body {
 /* Navigation bar styles */
 .navbar {
     width: 100%;
-      padding: 10px;
+    padding: 10px;
+    height: 10vh;
     background-color: black;
     display: flex;
     justify-content: space-between;
@@ -39,10 +40,12 @@ body {
     color: white;
     text-decoration: none;
     padding: 10px;
+    margin-left: 24px;
 }
   
 .navlinks a:hover {
     background-color: #EE6C4D;
+    border-radius: 8px;
 }
 
 .generate-input {
@@ -76,6 +79,7 @@ body {
 }
 
 #email-section {
+    margin-top: -5vh;
     height: 90vh;
     display: flex;
     align-items: center;

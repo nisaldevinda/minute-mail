@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,26 @@
     <title>Result</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='CSS/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
 </head>
+
 <body>
-    
+
     <nav class="navbar">
-        <div class="logo">
-          <img src="{{ url_for('static', filename='images/logo 1.png') }}" alt="Logo 1">
-          <img src="{{ url_for('static', filename='images/MinuteMail.png') }}" alt="Logo 2">
+        <div class="container">
+            <div class="logo">
+                <a href="/homepage">
+                    <img src="{{ url_for('static', filename='images/logo 1.png') }}" alt="Logo 1">
+                    <img src="{{ url_for('static', filename='images/MinuteMail.png') }}" alt="Logo 2">
+                </a>
+            </div>
+            <div class="navlinks">
+                <a href="/homepage">Home</a>
+                <a href="/loginpage">Sign Up</a>
+                <a href="/loginpage">Login</a>
+            </div>
         </div>
-        <div class="navlinks">
-          <a href="/homepage">Home</a>
-          <a href="/loginpage">Sign Up</a>
-          <a href="/loginpage">Login</a>
-        </div>
-      </nav>
+    </nav>
 
     <section id="email-section">
         <div class="container" id="email-section-wrap">
@@ -34,11 +40,13 @@
                     <div class="d-flex">
                         <div class="col-6">
                             <label for="recipient-name">Recipient's Name</label><br>
-                            <input type="text" id="recipient-name" class="generate-input" value="{{recipient_name}}" readonly>
+                            <input type="text" id="recipient-name" class="generate-input" value="{{recipient_name}}"
+                                readonly>
                         </div>
                         <div class="col-6">
                             <label for="recipient-title">Recipient's Title</label><br>
-                            <input type="text" id="recipient-title" class="generate-input" value="{{recipient_title}}" readonly>
+                            <input type="text" id="recipient-title" class="generate-input" value="{{recipient_title}}"
+                                readonly>
                         </div>
                     </div>
                     <br>
@@ -48,8 +56,10 @@
                     <label for="email-purpose">Content Given</label><br>
                     <input type="text" id="email-contents" class="generate-input" value="{{content}}" readonly>
                     <br><br>
-                    <p><a id="regenEmailBtn" href="\inputspage">Regenerate Email</a></p> 
-                    <p class="note">Not happy with what you received? <br>Click <a href="#" onclick="window.location.reload(true);">here</a> to regenerate an email with the same data you entered OR <br>Hit the "Regenerate Email" button above to enter new data.</p>
+                    <p><a id="regenEmailBtn" href="\inputspage">Regenerate Email</a></p>
+                    <p class="note">Not happy with what you received? <br>Click <a href="#"
+                            onclick="window.location.reload(true);">here</a> to regenerate an email with the same data
+                        you entered OR <br>Hit the "Regenerate Email" button above to enter new data.</p>
                     <style>
                     </style>
                 </form>
@@ -60,10 +70,13 @@
                 <br>
                 <br>
                 <label for="email-result">Email Subject and Body</label>
-                <div id="email-result"><p>{{generated_email}}</p></div>
+                <div id="email-result">
+                    <p>{{generated_email}}</p>
+                </div>
             </div>
         </div>
     </section>
 
 </body>
+
 </html>

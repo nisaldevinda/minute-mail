@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login & Registration Form</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/logincss.css') }}">
+  
 </head>
+
 <body>
+
+  <div class="login-logo">
+    <img src="{{ url_for('static', filename='images/logo 1.png') }}" alt="Logo 1">
+    <img src="{{ url_for('static', filename='images/MinuteMail.png') }}" alt="Logo 2">
+  </div>
+
   <div class="container">
     <input type="checkbox" id="check">
-    
     <div class="login form">
-        <header>Login</header>
+      <header class="login-form-header">Login</header>
       <form action="#">
         <input type="text" placeholder="Email">
         <input type="password" placeholder="Password">
@@ -21,7 +29,7 @@
       </form>
       <div class="signup">
         <span class="signup">Don't have an account?
-         <label for="check">Signup</label>
+          <label for="check">Sign Up</label>
         </span>
       </div>
     </div>
@@ -37,10 +45,11 @@
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
-         <label for="check">Login</label>
+          <label for="check">Login</label>
         </span>
       </div>
     </div>
   </div>
 </body>
+
 </html>
