@@ -53,7 +53,7 @@ def CreatePrompt():
 
 import openai
 
-f = open("C:\\Users\DELL\Desktop\key\key.txt", "r")
+f = open("D:\key\key.txt", "r")
 key= f.read()
 
 openai.api_key = key

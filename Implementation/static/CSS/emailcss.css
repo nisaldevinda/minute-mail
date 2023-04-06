@@ -60,7 +60,6 @@ body {
   transform: translate(-50%, -50%);
   max-width: 430px;
   width: 100%;
-  background: #293241;
   border-radius: 7px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -99,7 +98,8 @@ body {
 
 .text{
   color:#ddd;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 14px !important;
+  font-weight: bold;
 }
 
 .button {
@@ -123,4 +123,17 @@ body {
   .container {
     max-width: 90%;
   }
+}
+
+
+#email-gen-form{
+  padding: 48px;
+}
+
+#form{
+  margin-top: 48px;
+}
+
+#recipient-name{
+  width: 100% !important;
 }

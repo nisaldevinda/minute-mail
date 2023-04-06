@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Email Form</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/emailcss.css') }}">
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='CSS/bootstrap.css') }}"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/bootstrap.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
 </head>
 
@@ -30,23 +30,29 @@
   </header>
 
   <div class="container" id="form">
-    <form action="/GenerateEmail" method="POST">
+    <form action="/GenerateEmail" method="POST" id="email-gen-form">
+      <p class="text-center">Please fill out the following inout fields so we can generate your email.</p>
+      <br>
       <div class="form-group">
         <input type="text" id="sender-name" name="sender-name" placeholder="Sender's Name: " required>
       </div>
+      <br>
       <div class="form-group">
         <input type="text" id="recipient-name" name="recipient-name" placeholder="Recipient's Name:" required>
       </div>
+      <br>
       <div class="form-group">
-
         <input type="text" id="recipient-title" name="recipient-title" placeholder="Recipient's Title:" required>
       </div>
+      <br>
       <div class="form-group">
         <input type="text" id="purpose" name="purpose" placeholder="Purpose of the Email:" required>
       </div>
+      <br>
       <div class="form-group">
         <input type="text" id="content" name="content" placeholder="Content of Email:" required>
       </div>
+      <br>
       <div class="form-group">
         <label class="text" for="type">Type of Email:</label>
         <select id="type" name="type">
@@ -55,6 +61,7 @@
           <option value="professional">Professional Email</option>
         </select>
       </div>
+      <br>
       <input type="submit" class="button" value="Generate Email">
     </form>
   </div>
