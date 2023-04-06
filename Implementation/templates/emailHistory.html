@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/emailHistory.css') }}">
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="/homepage">
+          <img src="{{ url_for('static', filename='images/logo 1.png') }}" alt="Logo 1">
+          <img src="{{ url_for('static', filename='images/MinuteMail.png') }}" alt="Logo 2">
+      </a>
+      </div>
+      <div class="navlinks">
+        <a href="/inputspage" class="back-btn">Back</a> 
+      </div>
+    </nav>
+    
+    <!-- Body content -->
+    <div class="container">
+      <h1>Email History</h1>
+      <h2>Emails you've generated in the past are visible here. </h2>
+      <div class="email-list">
+        
+          <table >
+            <tr>
+              <th>Emails Generated</th>
+            </tr>
+            <tr>
+              <td>Email 1.<br> {{email1}}</td>
+            </tr>
+            <tr>
+              <td>Email 2.<br> {{email2}}</td>
+            </tr>
+          </table> 
+         
+        <!-- add more emails here -->
+      </div>
+    </div>
+    <p><a href="Generate email.html" class="btn">Generate Email</a></p>
+  </body>
+</html>

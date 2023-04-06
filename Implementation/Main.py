@@ -1,4 +1,6 @@
+from gzip import FNAME
 from flask import Flask, render_template, request
+import mysqlx
 app= Flask(__name__)
 app.static_folder = 'static'
 
@@ -14,6 +16,10 @@ def homepage():
 @app.route("/loginpage")
 def loginpage():
     return render_template("login.html")
+
+@app.route("/history")
+def historypage():
+    return dbconnectivity()
 
 inputs=[]
 
@@ -47,8 +53,7 @@ def CreatePrompt():
 
 import openai
 
-f = open("D:\key\key.txt", "r")
-
+f = open("C:\\Users\DELL\Desktop\key\key.txt", "r")
 key= f.read()
 
 openai.api_key = key
@@ -75,6 +80,18 @@ def DisplayEmail():
     email= APIcall()
     return render_template("email-result.html", sender_name= sender_name, recipient_name= recipient_name, recipient_title= recipient_title, 
                            purpose= purpose, content=content, generated_email= email)
+
+import mysql.connector
+mydb= mysql.connector.connect(host="localhost", user="root", password="", database="minutemail")
+
+def dbconnectivity(): 
+    mycursor=mydb.cursor()
+    mycursor.execute("SELECT generatedEmail from customerhistory WHERE emailAddress LIKE 'seniruw@gmail.com'")
+    myresult=mycursor.fetchall()
+    email1= myresult[0]
+    email2= myresult[1]
+
+    return render_template("emailHistory.html", email1= email1, email2= email2)
 
 if __name__=="__main__":
     app.run(debug=True, port=50001)
