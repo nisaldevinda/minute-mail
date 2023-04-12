@@ -4,6 +4,8 @@ import mysqlx
 app= Flask(__name__)
 app.static_folder = 'static'
 
+
+# Website Routing
 @app.route("/")
 @app.route("/homepage")
 def inputspage():
@@ -21,7 +23,9 @@ def loginpage():
 def historypage():
     return dbconnectivity()
 
+# Creating list to store user inputs
 inputs=[]
+
 
 @app.route("/GenerateEmail", methods=["POST", "GET"])
 def GenerateEmail():
@@ -82,8 +86,10 @@ def DisplayEmail():
                            purpose= purpose, content=content, generated_email= email)
 
 import mysql.connector
+
 mydb= mysql.connector.connect(host="localhost", user="root", password="", database="minutemail")
 
+# Database Integeration
 def dbconnectivity(): 
     mycursor=mydb.cursor()
     mycursor.execute("SELECT generatedEmail from customerhistory WHERE emailAddress LIKE 'seniruw@gmail.com'")
